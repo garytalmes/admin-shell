@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { IDropdownItem, IDropdownRadioItem, AdminContainer, Main, Sidebar } from "./components"
+import type { IDropdownItem, IDropdownRadioItem } from "./types"
+import { AdminContainer, MainArea, Sidebar } from "."
 import { HiCube } from "react-icons/hi"
 import "./index.css"
 
@@ -35,7 +36,7 @@ function App() {
   return (
     <AdminContainer>
       <Sidebar items={sidebarItems} />
-      <Main title="Title Here" dropdownItems={dropdownItems}>
+      <MainArea title="Title Here" dropdownItems={dropdownItems}>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, vero velit deserunt
           eligendi repudiandae eum, culpa doloribus suscipit consequatur provident totam ad!
@@ -116,7 +117,7 @@ function App() {
           doloribus suscipit consequatur provident totam ad! Reiciendis iste, a commodi minus rem
           alias tenetur?
         </p>
-      </Main>
+      </MainArea>
     </AdminContainer>
   )
 }

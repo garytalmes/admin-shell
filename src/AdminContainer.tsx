@@ -1,10 +1,7 @@
+"use client"
 import { createContext, useContext, useEffect, useState } from "react"
+import type { IContainerConfig } from "./types"
 import { breakpoints, getBreakpoint } from "./helpers"
-
-export interface IContainerConfig {
-  settings?: any
-  children?: React.ReactNode
-}
 
 const AdminContext = createContext({})
 export const useAdminCtx = () => useContext(AdminContext)

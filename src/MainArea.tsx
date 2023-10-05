@@ -1,12 +1,8 @@
+"use client"
+import type { IDropdownItem } from "./types"
 import { useAdminCtx } from "./AdminContainer"
-import { IDropdownItem, DropdownMenu } from "."
+import { DropdownMenu } from "./DropdownMenu"
 import { HamburgerMenuIcon } from "@radix-ui/react-icons"
-
-export interface IMainAreaConfig {
-  title?: string
-  dropdownItems?: IDropdownItem[]
-  children: React.ReactNode
-}
 
 export function MainArea({
   title = "",

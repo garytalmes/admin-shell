@@ -1,12 +1,9 @@
+"use client"
 import React from "react"
+import type { IDropDownWrapper, IDropdownMenu, IDropdownItem, IDropdownRadioItem } from "./types"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { DotFilledIcon } from "@radix-ui/react-icons"
 
-export interface IDropdownRadioItem extends IDropdownItem {
-  value?: string
-  setValue?: any
-  selected?: boolean
-}
 export function DropdownRadioItem({
   id = "",
   label = "",
@@ -33,12 +30,7 @@ export function DropDownItemWrapper({
   callback,
   children,
   ...rest
-}: {
-  href?: string
-  target?: string
-  callback?: any
-  children: React.ReactNode
-}) {
+}: IDropDownWrapper) {
   function handleCallback() {
     if (!callback) return null
     return (item: any) => callback(item)
@@ -58,16 +50,6 @@ export function DropDownItemWrapper({
   )
 }
 
-export interface IDropdownItem {
-  id?: string
-  type?: string
-  label?: string
-  href?: string
-  target?: string
-  callback?: any
-  options?: IDropdownRadioItem[]
-  keyCommand?: string
-}
 export function DropdownItem({
   label = "",
   href,
@@ -89,14 +71,6 @@ export function DropdownItem({
   )
 }
 
-export interface IDropdownMenu {
-  minW?: string
-  sideOffset?: number
-  align?: "center" | "start" | "end" | undefined
-  alignOffset?: number
-  items?: any[]
-  children?: React.ReactNode
-}
 export function DropdownMenu({
   minW = "120px",
   sideOffset,

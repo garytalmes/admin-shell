@@ -1,10 +1,7 @@
 "use client"
+import type { ISidebarItem, ISidebarIcon } from "./types"
 import { useAdminCtx } from "./AdminContainer"
 
-export interface ISidebarIcon {
-  icon: any
-  viewState?: string
-}
 export function SidebarIcon({ icon, viewState = "normal" }: ISidebarIcon) {
   const Icon = () => icon()
   return (
@@ -17,11 +14,6 @@ export function SidebarIcon({ icon, viewState = "normal" }: ISidebarIcon) {
   )
 }
 
-export interface ISidebarItem {
-  icon?: ISidebarIcon
-  label?: string
-  isActive?: boolean | null
-}
 export function SidebarItem({ icon, label = "", isActive = null }: ISidebarItem) {
   const { viewState }: any = useAdminCtx()
 
